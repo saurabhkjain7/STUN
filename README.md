@@ -1,8 +1,6 @@
 # STUN
 Code release for our paper "Stochastic Binary Network for Universal Domain Adaptation'' accepted by WACV 2024.
 
-![Framework Overview](img/framework.png)
-
 [Paper](https://openaccess.thecvf.com/content/WACV2024/html/Jain_Stochastic_Binary_Network_for_Universal_Domain_Adaptation_WACV_2024_paper.html) $\cdot$ [Video](https://youtu.be/ntgfBoGRT1c?si=tpSh8EMSD_GMYDLH)
 
 ## Requirements
