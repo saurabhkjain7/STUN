@@ -1,0 +1,1 @@
+python train.py --gpu $1 --setting $2 --dataset office --lambda_open_entropy 0.5 --lambda_adversarial 0.1 --lambda_consis 0.05 --num_classifiers 10

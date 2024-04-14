@@ -1,0 +1,1 @@
+python train.py --gpu $1 --setting $2 --dataset visda --lambda_open_entropy 0.5 --lambda_adversarial 0.1 --lambda_consis 0.1 --num_classifiers 10
