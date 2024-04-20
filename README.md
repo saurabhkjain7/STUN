@@ -33,8 +33,8 @@ sh scripts/office.sh $gpu-id oda
 ## Reference codes
 Part of our codes are taken from the following Github links:
 
-1.OVANET: https://github.com/VisionLearningGroup/OVANet
-2.STAR: https://github.com/zhiheLu/STAR_Stochastic_Classifiers_for_UDA
+1. OVANET: https://github.com/VisionLearningGroup/OVANet
+2. STAR: https://github.com/zhiheLu/STAR_Stochastic_Classifiers_for_UDA
 
 ## Reference
 This repository is contributed by [Saurabh Kumar Jain](http://www.cse.iitm.ac.in/profile.php?arg=Mjc4MQ==).
