@@ -7,7 +7,7 @@ Code release for our paper "Stochastic Binary Network for Universal Domain Adapt
 Python 3.8.10, Pytorch 1.10.1, Torch Vision 0.11.2. Use the provided requirements.txt file to create virtual environment.
 
 ## Data preparation
-[Office Dataset](https://people.eecs.berkeley.edu/~jhoffman/domainadapt/),
+[Office Dataset](https://drive.google.com/file/d/0B4IapRTv9pJ1WGZVd1VDMmhwdlE/view?pli=1&resourcekey=0-gNMHVtZfRAyO_t2_WrOunA),
 [OfficeHome Dataset](http://hemanthdv.org/OfficeHome-Dataset/), [VisDA](https://github.com/VisionLearningGroup/taskcv-2017-public/tree/master/classification)
 
 Prepare dataset in data directory.
@@ -31,7 +31,10 @@ Ex. Open Set Domain Adaptation on office.
 sh scripts/office.sh $gpu-id oda
 ```
 ## Reference codes
-https://github.com/VisionLearningGroup/OVANet
+Part of our codes are taken from the following Github links:
+
+1.OVANET: https://github.com/VisionLearningGroup/OVANet
+2.STAR: https://github.com/zhiheLu/STAR_Stochastic_Classifiers_for_UDA
 
 ## Reference
 This repository is contributed by [Saurabh Kumar Jain](http://www.cse.iitm.ac.in/profile.php?arg=Mjc4MQ==).
