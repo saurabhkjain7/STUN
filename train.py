@@ -237,6 +237,12 @@ def train(source,target,config):
         log_values.append(ent_open.item())
         log_string += " Open-set entropy: {:.6f}"
 
+        ### Predictions for strongly augmented target data
+        feat_t_bar = F(img_t_bar)
+        out_open_target_bar = SBN(feat_t_bar)
+        out_open_target_bar = out_open_target_bar.view(out_open_target_bar.size(0), 2, -1)
+        out_open_target_bar_prob = torch.softmax(out_open_target_bar,dim=1)
+        
         ### Confidence score calculation for target data
         prob_t = SBN(feat_t.detach())
         prob_t = prob_t.view(prob_t.size(0),2,-1)
@@ -256,10 +262,6 @@ def train(source,target,config):
         mask = max_probs_target >= args.conf_threshold
       
         ### Consistency regularization loss calculation using deep discriminative clustering
-        feat_t_bar = F(img_t_bar)
-        out_open_target_bar = SBN(feat_t_bar)
-        out_open_target_bar = out_open_target_bar.view(out_open_target_bar.size(0), 2, -1)
-        out_open_target_bar_prob = torch.softmax(out_open_target_bar,dim=1)
         tensor_list = out_open_target_prob[mask]
         targets_u_aux = out_open_target_prob[mask] / tensor_list.sum(0, keepdim=True).pow(0.5) 
         targets_u_aux /= targets_u_aux.sum(1, keepdim=True)
@@ -293,8 +295,8 @@ def train(source,target,config):
         opt_sbn.zero_grad()
         opt_d.zero_grad()
 
-        # if step % conf.train.log_interval == 0:
-        #     print(log_string.format(*log_values))
+        if step % conf.train.log_interval == 0:
+            print(log_string.format(*log_values))
         
         if step > 0 and step % conf.test.test_interval == 0:
             D.eval()
